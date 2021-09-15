@@ -1,0 +1,87 @@
+.jumbotron {
+  height: 350px; /* for now - change this as neccesary*/
+}
+
+.bg-gradient {
+  background: rgb(203,24,191);
+  background: linear-gradient(180deg, rgba(203,24,191,1) 0%, rgba(132,16,125,0.6909138655462185) 72%, rgba(0,0,0,0.2455357142857143) 100%);  
+}
+
+.album-jumbotron-description {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.jumbotron .album-jumbotron-description h3 {
+  font-weight: 700 !important;
+  font-size: 30px !important;
+}
+
+.album-jumbotron-description > p{
+  font-size: 11px; 
+  font-weight: 600;
+}
+
+.album-jumbotron-description h3{
+  font-weight: 700;
+  font-size: 30px;
+  height: 32px;
+}
+
+.artist-descr-area {
+  height: 20px !important;
+  display:flex;
+  align-items: center;
+}
+
+.artist-descr-area > p{
+  margin-bottom: 0;
+  font-size: 14px;
+  color: rgb(211, 211, 211);
+}
+
+.artist-descr-area a {
+  color: white;
+  margin-bottom: 0;
+  font-size: 14px;
+  height: 22px;
+}
+
+.artist-descr-area a :hover {
+  color: lightgray(182, 182, 182);
+  text-decoration: underline;
+}
+
+
+.artist-icon-sm {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: teal;
+}
+#title-for-circles {
+  display: flex;
+  align-items: center;
+}
+
+#title-for-circles::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color:  darkgray;
+  margin: 0 5px;
+}
+
+#title-for-circles::after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: darkgray;
+  margin: 0 5px;
+}

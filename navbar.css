@@ -1,0 +1,160 @@
+:root {
+  --green: #1db954;
+  --black: #191414;
+  --font: sans-serif !important;
+}
+body {
+  font-family: var(--font);
+  color: white;
+  background-color: var(--black) !important;
+}
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 280px;
+  background-color: black;
+  height: 100%;
+  overflow-x: hidden;
+  position: fixed;
+  z-index: 1;
+}
+
+.main-menu ul li a {
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: white;
+}
+
+.main-menu ul li a i {
+  margin-right: 1rem;
+}
+
+.playlist-menu {
+  width: 220px;
+  height: 50%;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 16px;
+  overflow-y: scroll;
+}
+.main {
+  margin-left: 280px;
+}
+
+.logo {
+  width: 240px;
+}
+hr {
+  background-color: grey;
+  width: 90%;
+}
+.recommended-album {
+  background-color: grey;
+  border-radius: 10px;
+  height: 116px;
+  opacity: 0.5;
+}
+.recommended-album img {
+  opacity: 1;
+}
+/* @media screen and (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+  .mainPage {
+    margin-left: 0;
+  }
+} */
+
+.mainPage {
+  margin-left: 280px;
+}
+
+/* .card:hover{
+      
+  } */
+
+.play-btn {
+  background: var(--green);
+}
+
+.play-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  transform: translateX(-60px);
+  opacity: 0;
+  top: 25%;
+  left: 90%;
+}
+
+.card:hover .play-btn {
+  opacity: 1;
+}
+.play-btn::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 2px;
+  margin: auto;
+  border-style: solid;
+  border-width: 7px 0 7px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.play-btn-2 {
+  background: var(--green);
+}
+
+.play-btn-2 {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  transform: translateX(-60px);
+  opacity: 0;
+  top: 30%;
+  left: 60%;
+}
+
+.card:hover .play-btn-2 {
+  opacity: 1;
+}
+.play-btn-2::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 2px;
+  margin: auto;
+  border-style: solid;
+  border-width: 7px 0 7px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.op:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.cb {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.firstlogo {
+  width: 150px;
+}

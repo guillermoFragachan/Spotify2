@@ -1,0 +1,195 @@
+.form-signin {
+  width: 100%;
+  max-width: 450px;
+  margin: 0px auto;
+}
+.btn-spotify {
+  border-radius: 35px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+.signup-btn {
+  border-radius: 35px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+.login-btn {
+  border-radius: 35px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 10px 0;
+  padding: 10px;
+  width: 105%;
+}
+.container {
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+.blocktext {
+  margin-left: 65px;
+  margin-right: auto;
+  width: 8em;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.btn-signup {
+  background-color: red;
+}
+
+#btn-facebook {
+  height: 100%;
+  width: 100%;
+  background-color: #3b5998;
+  padding: 16px 14px 18px;
+}
+#btn-facebook:hover {
+  background-color: #3a61b3;
+}
+#container-text {
+  border-radius: 35px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 800;
+}
+#btn-apple {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  padding: 16px 14px 18px;
+}
+#btn-google {
+  border: 1px solid black;
+  color: rgb(34, 34, 34);
+  padding: 16px 14px 18px;
+}
+#btn-apple:hover {
+  background-color: #616467;
+}
+.btn-spotify:hover {
+  color: #fff;
+}
+
+#btn-google:hover {
+  background-color: #616467;
+  color: #fff;
+}
+.divider {
+  content: "";
+  border-top: 1px solid #8b8b8b;
+  display: block;
+  line-height: 1px;
+  margin: 15px 0;
+  position: relative;
+  text-align: center;
+}
+.divider-title {
+  background-color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.remember {
+  margin-left: 15px;
+}
+.forget-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.forget-btn a {
+  text-decoration: underline;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #616467;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+.forget-btn a:hover {
+  color: #1da64d;
+}
+.remember-check {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.checkbox {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+  align-items: baseline;
+  justify-content: start;
+}
+.checkbox > span {
+  color: #616467;
+  margin-left: 5px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.checkbox > input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #c1c3c6;
+  border-radius: 4px;
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+}
+.checkbox > input:checked {
+  background-color: #15883e;
+  border-color: #15883e;
+}
+.checkbox > input:checked + span::before {
+  content: "\2713";
+  color: #fff;
+  display: block;
+  position: absolute;
+  left: 0.25rem;
+  top: -0.2rem;
+}
+
+.login-btn {
+  background-color: #15883e;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 2px;
+  min-width: 160px;
+  padding: 16px 14px 18px;
+  text-transform: uppercase;
+}
+.login-btn:hover {
+  background-color: #1ed760;
+  color: #fff;
+}
+.row-divider {
+  margin-bottom: 10px;
+}
+.signUp-btn {
+  background-color: transparent;
+  border: 2px solid grey;
+  border-radius: 35px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 2px;
+  min-width: 160px;
+  padding: 16px 14px 18px;
+  text-transform: uppercase;
+}
+.signUp-btn:hover {
+  background-color: #616467;
+  color: #fff;
+}

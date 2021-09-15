@@ -1,0 +1,212 @@
+#help {
+  background-image: url("./assets/bubbles.webp");
+  background-size: cover;
+  padding: 75px;
+  text-align: center;
+}
+
+#title {
+  color: white;
+  font-size: 70px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+#search {
+  width: 850px;
+  height: 50px;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+#searchIcon {
+  width: 25px;
+  height: 25px;
+}
+
+::placeholder {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+#firstRow {
+  color: #cbccd5;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 50px 0 0 0;
+}
+
+#secondRow {
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  padding: 10px 0 0 0;
+}
+
+#secondRowText:hover,
+#infoRowText:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#thirdRow {
+  font-size: 25px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+#info {
+  background-color: #eeeeee;
+  padding: 50px 0 0 150px;
+  text-align: left;
+}
+
+#infoRowText {
+  color: #117a37;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+#fourthRow {
+  padding: 30px 0 15px 0;
+}
+
+#fifthRow,
+#sixthRow,
+#seventhRow,
+#eighthRow,
+#ninthRow,
+#tenthRow {
+  padding: 0 0 15px 0;
+}
+
+#info2 {
+  background-color: #eeeeee;
+  padding: 50px 0 50px 150px;
+  text-align: left;
+}
+
+#navLogo {
+  width: 150px;
+  margin-left: 150px;
+  padding: 12px;
+}
+
+#navLogo:hover {
+  cursor: pointer;
+}
+
+#navbar {
+  background-color: black !important;
+}
+
+#navbarNav {
+  margin-left: 550px;
+}
+
+#listItem {
+  color: white !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  padding: 0 20px 0 20px;
+}
+
+#listItem:hover {
+  color: #1fd662 !important;
+}
+
+#visit {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 75px;
+}
+
+#visitTitle {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#visitText {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 18px;
+  padding: 10px;
+}
+
+#visitButton {
+  background-color: #1fd662;
+  border: none;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+#visitButton:hover {
+  cursor: pointer;
+  width: 155px;
+  height: 53px;
+}
+
+#extra {
+  background-color: black;
+  color: white;
+  text-align: left;
+  padding: 50px 0 50px 0;
+}
+
+#navLogo2 {
+  width: 150px;
+}
+
+#social {
+  background-color: #222326;
+  padding: 10px;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+#social:hover {
+  cursor: pointer;
+}
+
+#socialIcon:hover {
+  fill: #1fd662;
+}
+
+#grayTitle {
+  color: #919496;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+#extraLink {
+  color: white;
+  padding: 0 0 16px 0;
+}
+
+#extraLink:hover {
+  cursor: pointer;
+  color: #1fd662;
+}
