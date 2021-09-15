@@ -59,7 +59,7 @@ function changeNavbar(){
 
 
   let nodeAlbumNavbar = document.getElementsByClassName('left-song-nav')[0].children[0]
-  let parentAlbum = document.getElementById('album').parentElement
+  let parentAlbum = document.getElementsByClassName('albumSelector')[0].parentElement
  
 
   parentAlbum.addEventListener('click', change )

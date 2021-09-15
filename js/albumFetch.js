@@ -38,6 +38,18 @@ function addContainer(_titleName){
 
 }
 
+function playAudio(){
+    console.log('hola')
+}
+function playerFunction(){
+    let albumNode = document.getElementsByClassName('albumSelector')
+    
+    for(let i =0; i<albumNode.length; i++){
+        let audio = document.querySelectorAll('.albumSelector>audio')[i]
+        albumNode[i].addEventListener('click', playAudio)
+    }
+}
+
 
 
 
@@ -52,13 +64,22 @@ fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem')
     let containerNode = document.querySelectorAll('.container-fluid.flex-wrap.d-flex.justify-content-start')[1]
     //create card
     let card = document.createElement('div')
-    card.classList.add('card', 'p-2', 'cb', 'mx-2', 'mb-4')
-    card.style.cssText='min-width:150px; max-width:200px;' //not working
+    card.classList.add('card', 'p-2', 'cb', 'mx-2', 'mb-4', 'cardWidth', 'albumSelector')
+    card.setAttribute("id", "album");
     containerNode.appendChild(card)
 
     let imgNode= document.createElement('img')
     imgNode.src=body.data[0].album.cover
     card.appendChild(imgNode)
+
+
+    //add audio prev
+
+    let audioNode = document.createElement('audio')
+    audioNode.src=body.data[0].preview
+    audioNode.setAttribute('id', 'audio')
+    card.appendChild(audioNode)
+    
     
 
     //card body
@@ -72,6 +93,8 @@ fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem')
     songTitleNode.innerHTML=body.data[0].title_short
     cardBodyNode.appendChild(songTitleNode)
 
+
+    //song artist
     let songArtistNode = document.createElement('p')
     songArtistNode.classList.add('cardtext')
     songArtistNode.innerHTML=body.data[0].artist.name
@@ -79,16 +102,19 @@ fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem')
     cardBodyNode.appendChild(songArtistNode)
     
 
-    //create image
-    
     
 
-    //add elements to the card
     
     
     
-
 
     console.log(containerNode)
+    playerFunction()
 
 })
+
+
+window.onload = function(){
+    
+  }
+
