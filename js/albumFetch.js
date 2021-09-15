@@ -45,20 +45,48 @@ function addContainer(_titleName){
 fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem')
 .then(response => response.json())
 .then(body => {
-    console.log(body.data[0].album)
+    console.log(body.data[0])
 
     addContainer('Eminem Songs')
     //container-fluid flex-wrap d-flex justify-content-start
     let containerNode = document.querySelectorAll('.container-fluid.flex-wrap.d-flex.justify-content-start')[1]
+    //create card
     let card = document.createElement('div')
     card.classList.add('card', 'p-2', 'cb', 'mx-2', 'mb-4')
     card.style.cssText='min-width:150px; max-width:200px;' //not working
     containerNode.appendChild(card)
 
-    //add image
     let imgNode= document.createElement('img')
     imgNode.src=body.data[0].album.cover
     card.appendChild(imgNode)
+    
+
+    //card body
+    let cardBodyNode = document.createElement('div')
+    cardBodyNode.classList.add('card-body')
+    card.appendChild(cardBodyNode)
+
+    //songtitle
+    let songTitleNode = document.createElement('h6')
+    songTitleNode.classList.add('card-title')
+    songTitleNode.innerHTML=body.data[0].title_short
+    cardBodyNode.appendChild(songTitleNode)
+
+    let songArtistNode = document.createElement('p')
+    songArtistNode.classList.add('cardtext')
+    songArtistNode.innerHTML=body.data[0].artist.name
+
+    cardBodyNode.appendChild(songArtistNode)
+    
+
+    //create image
+    
+    
+
+    //add elements to the card
+    
+    
+    
 
 
     console.log(containerNode)
