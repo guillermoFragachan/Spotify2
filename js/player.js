@@ -52,10 +52,10 @@ function pausePlay () {
 
 
 
-function changeNavbar(){
+function changeNavbar(_element){
 
 
-  let nodeAlbum = document.getElementById('album').children[0]
+  let nodeAlbum = _element
 
 
   let nodeAlbumNavbar = document.getElementsByClassName('left-song-nav')[0].children[0]
@@ -75,8 +75,8 @@ function changeNavbar(){
 }
 
 
-function volume(event){
-  let audio = document.getElementById('audio')
+function volume(event, _audio){
+  let audio = _audio
   //  audio.play()
 
   let volume = event.target.value /100;
@@ -91,8 +91,8 @@ function volume(event){
 
 
 //mute function
-function mute(){
-  let audio = document.getElementById('audio')
+function mute(_audio){
+  let audio = _audio
   let iconNode = document.getElementById('mute')
   
   if (audio.volume != 0){
@@ -121,8 +121,11 @@ function skip(){
 //extra progress bar
 
 
-function progress(){
-  let audio = document.getElementById('audio')
+function progress(_audio){
+
+  
+  
+  let audio = _audio
   let inputNode = document.getElementById('pb') 
 
   let update = audio.duration * (inputNode.value / 100);
@@ -135,8 +138,8 @@ function progress(){
   
 }
 
-function realtime(){
-  let audio = document.getElementById('audio')
+function realtime(_audio){
+  let audio = _audio
   let inputNode = document.getElementById('pb') 
   let seekPosition = 0;
   

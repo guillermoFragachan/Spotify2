@@ -315,51 +315,55 @@
       </div>
 
       <!-- PLAYER BOTTOM -->
-      <div class="container-fluid">
-        <div class="song-navbar">
-          <div class="left-song-nav">
-            <img src="https://i.scdn.co/image/ab67616d0000b27358aa659299939bc52a2dbc22" alt="Group 'Queen' album cover"
-              class="song-nav-img-resize">
-            <div class="text-and-icons">
-              <div class="text-description">
-                <a href="#">
-                  <h5>Another One Bites The Dust - Remastered 2011</h5>
-                </a>
-                <a href="#">
-                  <p>Queen</p>
-                </a>
-              </div>
-              <div class="song-nav-icons">
-                <img src="spotify-icons/heart.svg" class="song-nav-icons-resize pointer">
-              </div>
-            </div>
+     
+    <div class="song-navbar">
+      <div class="left-song-nav">
+        <img src="https://i.scdn.co/image/ab67616d0000b27358aa659299939bc52a2dbc22" alt="Group 'Queen' album cover"
+          class="song-nav-img-resize">
+        <div class="text-and-icons">
+          <div class="text-description">
+            <a href="#">
+              <h5 id="navTitle">Another One Bites The Dust - Remastered 2011</h5>
+            </a>
+            <a href="#">
+              <p>Queen</p>
+            </a>
           </div>
-
-          <div class="middle-song-nav">
-            <div class="top-part-song-nav">
-              <img src="spotify-icons/shuffle.png" class="pointer">
-              <img src="spotify-icons/previous-2.png" class="pointer">
-              <img src="spotify-icons/play-button.png" id="middle-icon" class="pointer">
-              <img src="spotify-icons/previous-3.png" class="pointer">
-              <img src="spotify-icons/loop.png" class="pointer">
-            </div>
-            <div class="btm-part-song-nav">
-              <p>0:12</p>
-              <span class="song-bar-line pointer"></span>
-              <p>3:34</p>
-            </div>
-          </div>
-
-          <div class="right-song-nav">
-            <div class="icons-combo">
-              <img src="spotify-icons/list.png" id="first-icon" class="pointer">
-              <img src="spotify-icons/responsive.png" class="pointer">
-              <img src="spotify-icons/audio.png" class="pointer">
-              <div class="volume-line pointer"></div>
-            </div>
+          <div class="song-nav-icons">
+            <img src="spotify-icons/heart.svg" class="song-nav-icons-resize pointer">
           </div>
         </div>
       </div>
+
+      <div class="middle-song-nav">
+        <div class="top-part-song-nav">
+          <img src="spotify-icons/shuffle.png" class="pointer">
+          <img src="spotify-icons/previous-2.png" class="pointer">
+          <img src="spotify-icons/play-button.png" onclick="pausePlay ()" id="middle-icon" class="pointer">
+          <img src="spotify-icons/previous-3.png" class="pointer">
+          <img src="spotify-icons/loop.png" class="pointer">
+        </div>
+        <div class="btm-part-song-nav">
+          <p id="currentDuration">0:00</p>
+          <input type="range"  value='0' name="progress-song" class="song-bar-line pointer"
+            id="pb">
+
+
+          <p id="totalduration">3:34</p>
+        </div>
+      </div>
+
+      <div class="right-song-nav">
+        <div class="icons-combo">
+          <img src="spotify-icons/list.png" id="first-icon" class="pointer">
+          <img src="spotify-icons/responsive.png" class="pointer">
+          <img src="spotify-icons/audio.png"  class="pointer" id='mute'>
+          <input class="volume-line pointer" type="range" value="50" >
+
+        </div>
+      </div>
+    </div>
+
 
 
       <!-- PLAY FUNCTIONALITIES -->
@@ -382,6 +386,8 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
 
+        <script src="./js/player.js"></script>
+
       <script>
 
 
@@ -390,6 +396,7 @@
 
 
         window.onload = function () {
+
           let idParams = new URLSearchParams(window.location.search)
 
           let id = idParams.get("id")
@@ -441,13 +448,44 @@
                   })
                   tableNode.appendChild(songNode)
                   songNode.addEventListener('click', () => {
+                    
+                    document.getElementById('pb').addEventListener('change', ()=>{
+                      progress(songNode.children[0])
+                      realtime(songNode.children[0])
+                      
+                      
+                      
+                    })
+
+                    document.getElementsByClassName('volume-line')[0].addEventListener('change', ()=>{
+                      volume(event, songNode.children[0])
+                    })
+                    
+                    document.getElementById('mute').addEventListener('click', ()=>{
+                     
+                      mute(songNode.children[0])
+
+                      
+                    })
+
+                    
+
+
+
                     if (songNode.classList.value === 'play') {
                       songNode.children[0].pause()
+
                     } else {
                       songNode.children[0].play()
+
                     }
                     songNode.classList.toggle('play');
+                    
                   })
+
+
+
+                  
               })
 
 
@@ -491,8 +529,7 @@
 
             })
 
-
-
+            
         }
 
       </script>
