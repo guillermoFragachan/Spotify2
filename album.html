@@ -404,77 +404,89 @@
             .then((responseBody) => responseBody.json())
             .then((data) => {
 
+  
+              // FILTER TO GET TRACKS WITH ALBUM ID:
+              let albumTracks = data.data.filter((element) => {
+                if(element.album.id === parseInt(id)) {
+                  return element;
+                }
+              })
 
-              console.log(data.data[0].album.id);
+              // ALBUM COVER AND DETAILS CHANGED:
+              let albumImgElement = document.querySelector(".shadow");
+              albumImgElement.src = albumTracks[0].album.cover;
+              let albumTitle = document.querySelector(".album-jumbotron-description > h3");
+              albumTitle.innerText = albumTracks[0].album.title;
+              let artistTitle = document.getElementById("exception");
+              artistTitle.innerText = albumTracks[0].artist.name;
+              let trackAmount = document.querySelector(".artist-descr-area > p:last-of-type");
+              trackAmount.innerText = `${albumTracks.length} tracks`;
+
+              // CREATE TRACKLIST ELEMENTS:
+              albumTracks.forEach((track,index) => {
+                let songNode = document.createElement(`tr`)
+                  songNode.id = `track${index}`
+                  songNode.innerHTML = `
+                      <audio src='${track.preview}'></audio>  
+                      <th scope="row">${index+1}</th>
+                      <td>
+                        <h6>${track.title}</h6>
+                        <a >${track.artist.name}</a>        
+                      </td>
+                      `;
+
+                  songNode.children[2].children[1].addEventListener('click', () => {
+                    window.location.assign(`./artist-page.html?artist=` + track.artist.name )
+                    //window.location.assign("./details.html?picId=" + photo.id)
+                  })
+                  tableNode.appendChild(songNode)
+                  songNode.addEventListener('click', () => {
+                    if (songNode.classList.value === 'play') {
+                      songNode.children[0].pause()
+                    } else {
+                      songNode.children[0].play()
+                    }
+                    songNode.classList.toggle('play');
+                  })
+              })
 
 
-              for (let i = 0; i < data.data.length; i++) {
+
+/* 
+             for (let i = 0; i < data.data.length; i++) {
 
                 if (data.data[i].album.id === parseInt(id)) {
                   //console.log(data.data[i]);
-
                   let songNode = document.createElement(`tr`)
                   songNode.id = `track${i}`
                   songNode.innerHTML = `
                       <audio src='${data.data[i].preview}'></audio>  
-                      <th scope="row">${i + 1}</th>
+                      <th scope="row">${i+1}</th>
                       <td>
                                 <h6>${data.data[i].title}</h6>
                                 <a >${data.data[i].artist.name}</a>
                                 
                       </td>
-                      
-
-                      
-                      
-                      `
-
-                    
+                      `;
                    songNode.children[2].children[1].addEventListener('click', () => {
-
                     window.location.assign(`./artist-page.html?artist=` + data.data[i].artist.name )
-
                     //window.location.assign("./details.html?picId=" + photo.id)
-
-
                   })
-
                   //add th artis name
-
                   // make it clickable
-
-
                   //dinamic
-
-
-
                   tableNode.appendChild(songNode)
-
                   songNode.addEventListener('click', () => {
-
-
-
-
                     if (songNode.classList.value === 'play') {
                       songNode.children[0].pause()
                     } else {
                       songNode.children[0].play()
-
                     }
-
                     songNode.classList.toggle('play')
-
-
-
                   })
-
-
-
-
-
                 }
               }
-
+ */
 
 
             })
