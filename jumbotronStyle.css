@@ -7,7 +7,8 @@ body {
 }
 
 .jumbotron {
-  background-image: url("https://images.wsj.net/im-238034?width=1280&size=1");
+  background-image: url("");
+  background-color: black !important;
   background-size: cover;
   height: 100%;
   background-color: black;
@@ -17,7 +18,7 @@ body {
 }
 
 .newJumbotron {
-  background-image: url("https://images.wsj.net/im-238034?width=1280&size=1");
+  background-image: url("");
   background-size: auto;
   height: 100%;
   background-color: black;

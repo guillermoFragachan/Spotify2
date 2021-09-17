@@ -1,578 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Album page</title>
+  <meta charset="UTF-8">
+  <title>Album page</title>
 
- <!-- FAVICON -->
- <link rel = "icon" href = 
- "https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/spotify-512.png" 
-         type = "image/x-icon">
+  <!-- FAVICON -->
+  <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/spotify-512.png"
+    type="image/x-icon">
 
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-<link rel="stylesheet" href="./song-nav.css">
-<link rel="stylesheet" href="./navbar.css">
-<link rel="stylesheet" href="./jumbotronStyle.css">
-<link rel="stylesheet" href="./albumStyle.css">
-<link rel="stylesheet" href="album-jumbotron.css">
+  <link rel="stylesheet" href="./song-nav.css">
+  <link rel="stylesheet" href="./navbar.css">
+  <link rel="stylesheet" href="./jumbotronStyle.css">
+  <link rel="stylesheet" href="./albumStyle.css">
+  <link rel="stylesheet" href="album-jumbotron.css">
 
-<style>
-  body{
-    background: rgb(95,33,76);
-background: linear-gradient(180deg, rgba(95,33,76,1) 20%, rgba(18,18,18,1) 55%) !important;
-  }
+  <style>
+    body {
+      background: rgb(95, 33, 76);
+      background: linear-gradient(180deg, rgba(95, 33, 76, 1) 20%, rgba(18, 18, 18, 1) 55%) !important;
+    }
 
-     .op {
+    .op {
       background-color: rgba(255, 255, 255, 0);
     }
 
-    .op:hover{
-        cursor: pointer;
-        background-color: rgba(95, 15, 15, 0.2);
+    .op:hover {
+      cursor: pointer;
+      background-color: rgba(95, 15, 15, 0.2);
     }
 
-h5{
-    color: white;
-}
+    h5 {
+      color: white;
+    }
 
-.smallfont{
-    font-size: smaller;
-}
-svg{
-  color: white;
-}
-.jumbotron{
-   margin-left: 280px;
-    margin-right: 0;
-    width: 100%;
-    margin-bottom: 0;
-}
+    .smallfont {
+      font-size: smaller;
+    }
 
-td p,
-td,
-th {
-  font-size: 13px;
-  margin: 0;
-  color: #969696;
-}
+    svg {
+      color: white;
+    }
 
-td h6 {
-  color: #f4f4f4;
-  margin: 0;
-  font-size: medium !important;
-}
+    .jumbotron {
+      margin-left: 280px;
+      margin-right: 0;
+      width: 100%;
+      margin-bottom: 0;
+    }
 
-</style>
+    td p,
+    td,
+    th {
+      font-size: 13px;
+      margin: 0;
+      color: #969696;
+    }
+
+    td h6 {
+      color: #f4f4f4;
+      margin: 0;
+      font-size: medium !important;
+    }
+  </style>
 
 </head>
 
 <body>
-    <div class="mx-0 px-0 container-fluid overflow-hidden">
-      <div class="row">
-        <div class="col-2">
-          <!----SIDEBAR-->
-  
-  
-          <nav class=" sidebar flex-column fixed-left navbar-dark mb-5 pb-5">
-            <div class="container ml-3 ">
-              <a class="navbar-brand my-4 logo " href="./index.html">
-                <img src="./assets/Spotify_Logo_RGB_White.png" class="firstlogo" alt="">
-              </a>
-              <div class=" main-menu " id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-  
-                    <a class="nav-link active" aria-current="page" href="./index.html">
-                      <i class="bi bi-house-door-fill"></i>
-                      Home
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="bi bi-search"></i>
-                      Search
-                    </a>
-                  </li>
-  
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="bi bi-music-note-list"></i>
-                      Your library
-                    </a>
-  
-                  </li>
-                </ul>
-  
-              </div>
-  
-  
-  
-  
-              <!---PLay lists-->
-              <div class=" main-menu mt-5 " id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-  
-                    <a class="nav-link" aria-current="page" href="#" onclick="openModal()" id="open">
-                      <i class="bi bi-plus-square"></i>
-                      Create playlist
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <i class="bi bi-caret-right-square"></i>
-                      Liked songs
-                    </a>
-                  </li>
-  
-  
-                </ul>
-  
-              </div>
-  
-              <hr class="ml-0 mt-5 mb-0">
-              <!---Song lists-->
-  
-              <div class=" playlist-menu mt-4 " id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-  
-                    <a class="nav-link active" aria-current="page" href="#">
-                      The Bachelor Ends
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      Fun At Snacks
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      Girls' Snacks
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      Summer Whoop
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      Modern Hall
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      Room For Ends
-                    </a>
-                  </li>
-  
-  
-                </ul>
-  
-              </div>
-  
-  
-              <!---install app-->
-              <div class="main-menu ml-0 mb-5 mt-3">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li>
-                    <a href=""class="text-secondary">
-                      <i class="bi bi-arrow-down-circle"></i>
-                      Install App
-                    </a>
-                  </li>
-                </ul>
-              </div>
-  
+  <div class="mx-0 px-0 container-fluid overflow-hidden">
+    <div class="row">
+      <div class="col-2">
+        <!----SIDEBAR-->
+
+
+        <nav class=" sidebar flex-column fixed-left navbar-dark mb-5 pb-5">
+          <div class="container ml-3 ">
+            <a class="navbar-brand my-4 logo " href="./index.html">
+              <img src="./assets/Spotify_Logo_RGB_White.png" class="firstlogo" alt="">
+            </a>
+            <div class=" main-menu " id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+
+                  <a class="nav-link active" aria-current="page" href="./index.html">
+                    <i class="bi bi-house-door-fill"></i>
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="bi bi-search"></i>
+                    Search
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="bi bi-music-note-list"></i>
+                    Your library
+                  </a>
+
+                </li>
+              </ul>
+
             </div>
-          </nav>
-        </div>
-  
-        
-        
-  
-        <!---END SIDEBAR-->
-
-<!-- JUMBOTRON -->
-<div sytle=""class="jumbotron jumbotron-fluid bg-gradient d-flex align-items-end">
-
-  <svg class="op" id="leftIcon" xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-  </svg>
-  <svg class="op" id="rightIcon" xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-  </svg>
-
-  <img src="https://i1.sndcdn.com/artworks-000500823264-7n2dz6-t500x500.jpg" class="shadow ml-5" style="width: 200px !important;">
-  <div class="album-jumbotron-description d-inline-block text-light ml-3">
-    <p class="mb-1">ALBUM</p>
-    <h3  class="mb-0">Bohemian Rhapsody (The Original Soundtrack)</h3>
-    <div class="artist-descr-area d-flex mt-2">
-     <span class="artist-icon-sm mr-1"></span>
-     <a href="#" class="text-white" id="exception"><p>Queen</p></a>
-     <p id="title-for-circles">2018</p>
-     <p>22 songs, 1hr 19min</p>
-    </div>
-  </div>
- </div>
 
 
 
 
-<!-- PLAYLIST MAIN-->
+            <!---PLay lists-->
+            <div class=" main-menu mt-5 " id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
 
-<div class="container-fluid" style="margin-left: 277px;">
-
-
-<!-- LEFT PART -->
-
-<div class="row  mt-0">
-    <div class="col-12">
-       
-
-    <!-- TABLE -->
-    <button id="playButton" onclick="play()" >
-      <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16">
-        <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-      </svg>
-    </button>
-
-    <div id="heartIcon">
-      <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-heart" viewBox="0 0 16 16">
-        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-      </svg>
-    </div>
-
-    <div id="ellipsisIcon">
-      <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-three-dots" viewBox="0 0 16 16">
-        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-      </svg>
-    </div>
+                  <a class="nav-link" aria-current="page" href="#" onclick="openModal()" id="open">
+                    <i class="bi bi-plus-square"></i>
+                    Create playlist
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="bi bi-caret-right-square"></i>
+                    Liked songs
+                  </a>
+                </li>
 
 
-    <table class="table borderless">
-      <thead>
-        <tr id="headingTrack">
-          <th style="width: 2%;" scope="col">#</th>
-          <th style="width: 65%;" scope="col">TITLE</th>
-          <th style="width: 30%"; scope="col">
-            <svg id="refresh" onclick="location.reload();" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#BAB7BE" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-              <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-              <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-            </svg>
-          </th>
-          <th scope="col">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16" style="margin-inline-start: 15px;">
-              <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
-            </svg>
-          </th>
-          <th style="width: 3%;"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr  id="track1">
-          <th scope="row" >1</th>
-          <td >
-            <h6>20th Century Fox Fanfare</h6>
-            <p >Queen</p>
-          </td>
-          <td>
-            <button id="playTrack" onclick="playAudio()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16">
-                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-              </svg>
-            </button>
-            <button id="pauseTrack" onclick="pauseAudio()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pause-fill" viewBox="0 0 16 16">
-                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
-              </svg>
-            </button> 
-            <svg onclick="favourite1()" id="heart1" xmlns="http://www.w3.org/2000/svg" fill="#BAB7BE" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg>
-          </td>
-          <td>0:25</td>
-        </tr>
-        <tr  id="track2">
-          <th scope="row">2</th>
-          <td>
-            <h6>Somebody To Love</h6>
-            <p >Queen</p>
-          </td>
-          <td>
-            <button id="playTrack2" onclick="playAudio2()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16">
-                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-              </svg>
-            </button>
-            <button id="pauseTrack2" onclick="pauseAudio2()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pause-fill" viewBox="0 0 16 16">
-                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
-              </svg>
-            </button> 
-            <svg onclick="favourite2()" id="heart2" xmlns="http://www.w3.org/2000/svg" fill="#BAB7BE" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg>
-          </td>
-          <td>4:55</td>
-        </tr>
-        <tr id="track3">
-          <th scope="row">3</th>
-          <td>
-            <h6>Doing All Right - ...Revisited</h6>
-            <p >Smile</p>
-          </td>
-          <td>
-            <button id="playTrack3" onclick="playAudio3()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16">
-                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-              </svg>
-            </button>
-            <button id="pauseTrack3" onclick="pauseAudio3()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pause-fill" viewBox="0 0 16 16">
-                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
-              </svg>
-            </button> 
-            <svg onclick="favourite3()" id="heart3" xmlns="http://www.w3.org/2000/svg" fill="#BAB7BE" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg>
-          
-          </td>
-          <td>3:16</td>
-        </tr>
-        <tr id="track4">
-          <th scope="row">4</th>
-          <td>
-            <h6>Keep Yourself Alive - Live At The Rainbow</h6>
-            <p >Queen</p>
-          </td>
-          <td>
-            <button id="playTrack4" onclick="playAudio4()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16">
-                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-              </svg>
-            </button>
-            <button id="pauseTrack4" onclick="pauseAudio4()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pause-fill" viewBox="0 0 16 16">
-                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
-              </svg>
-            </button>  
-            <svg onclick="favourite4()" id="heart4" xmlns="http://www.w3.org/2000/svg" fill="#BAB7BE" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg>
-          </td>
-          <td>3:56</td>
-        </tr>
-        <tr  id="track5">
-          <th scope="row">5</th>
-          <td>
-            <h6>Killer Queen</h6>
-            <p >Queen</p>
-          </td>
-          <td>
-            <button id="playTrack5" onclick="playAudio5()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16">
-                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-              </svg>
-            </button>
-            <button id="pauseTrack5" onclick="pauseAudio5()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pause-fill" viewBox="0 0 16 16">
-                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
-              </svg>
-            </button> 
-            <svg onclick="favourite5()" id="heart5" xmlns="http://www.w3.org/2000/svg" fill="#BAB7BE" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg>
-          </td>
-          <td>2:59</td>
-        </tr>
-        <tr  id="track6">
-          <th scope="row">6</th>
-          <td>
-            <h6>Fat Bottomed Girls</h6>
-            <p >Queen</p>
-          </td>
-          <td>
-            <button id="playTrack6" onclick="playAudio6()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16">
-                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-              </svg>
-            </button>
-            <button id="pauseTrack6" onclick="pauseAudio6()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pause-fill" viewBox="0 0 16 16">
-                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
-              </svg>
-            </button> 
-            <svg onclick="favourite6()" id="heart6" xmlns="http://www.w3.org/2000/svg" fill="#BAB7BE" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg>
-          </td>
-          <td>4:37</td>
-        </tr>
-        <tr  id="track7">
-          <th scope="row">7</th>
-          <td>
-            <h6>Bohemian Rhapsody</h6>
-            <p >Queen</p>
-          </td>
-          <td>
-            <button id="playTrack7" onclick="playAudio7()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16">
-                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-              </svg>
-            </button>
-            <button id="pauseTrack7" onclick="pauseAudio7()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pause-fill" viewBox="0 0 16 16">
-                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
-              </svg>
-            </button> 
-            <svg onclick="favourite7()" id="heart7" xmlns="http://www.w3.org/2000/svg" fill="#BAB7BE" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg>
-          </td>
-          <td>5:54</td>
-        </tr>
-        <tr   id="track8">
-          <th scope="row">8</th>
-          <td>
-            <h6>Now I'm Here - Live At The Hammersmith Odeon</h6>
-            <p >Queen</p>
-          </td>
-          <td>
-            <button id="playTrack8" onclick="playAudio8()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16">
-                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-              </svg>
-            </button>
-            <button id="pauseTrack8" onclick="pauseAudio8()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pause-fill" viewBox="0 0 16 16">
-                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
-              </svg>
-            </button> 
-            <svg onclick="favourite8()" id="heart8" xmlns="http://www.w3.org/2000/svg" fill="#BAB7BE" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg>
-          </td>
-          <td>4:25</td>
-        </tr>
-        <tr   id="track9">
-          <th scope="row">9</th>
-          <td>
-            <h6>Crazy Little Thing Called Love</h6>
-            <p >Queen</p>
-          </td>
-          <td>
-            <button id="playTrack9" onclick="playAudio9()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16">
-                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-              </svg>
-            </button>
-            <button id="pauseTrack9" onclick="pauseAudio9()" type="button">
-              <svg id="trackIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pause-fill" viewBox="0 0 16 16">
-                <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
-              </svg>
-            </button> 
-            <svg onclick="favourite9()" id="heart9" xmlns="http://www.w3.org/2000/svg" fill="#BAB7BE" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg>
-          </td>
-          <td>2:43</td>
-        </tr>
-        
-        
-      </tbody>
-    </table>
+              </ul>
 
-    <div id="playing" class="pb-5 mb-5">
-      <svg id="stopIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#121212" class="bi bi-pause-fill" viewBox="0 0 16 16">
-        <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
-      </svg>
+            </div>
 
-      <h6 id="playingText" style="display: inline-block;"></h6>
-      <h6 id="playingText2" style="display: inline-block;"></h6>
-    </div>
-  </div>
-</div>
-</div>
+            <hr class="ml-0 mt-5 mb-0">
+            <!---Song lists-->
 
-<!-- PLAYER BOTTOM -->
-<div class="container-fluid">
-<div class="song-navbar">
-    <div class="left-song-nav">
-      <img src="https://i.scdn.co/image/ab67616d0000b27358aa659299939bc52a2dbc22" alt="Group 'Queen' album cover" class="song-nav-img-resize">
-      <div class="text-and-icons">
-        <div class="text-description">
-          <a href="#"> <h5>Another One Bites The Dust - Remastered 2011</h5> </a>
-          <a href="#"> <p>Queen</p> </a>
-        </div>
-        <div class="song-nav-icons">
-          <img src="spotify-icons/heart.svg" class="song-nav-icons-resize pointer">
+            <div class=" playlist-menu mt-4 " id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+
+                  <a class="nav-link active" aria-current="page" href="#">
+                    The Bachelor Ends
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Fun At Snacks
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Girls' Snacks
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Summer Whoop
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Modern Hall
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Room For Ends
+                  </a>
+                </li>
+
+
+              </ul>
+
+            </div>
+
+
+            <!---install app-->
+            <div class="main-menu ml-0 mb-5 mt-3">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li>
+                  <a href="" class="text-secondary">
+                    <i class="bi bi-arrow-down-circle"></i>
+                    Install App
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </nav>
+      </div>
+
+
+
+
+      <!---END SIDEBAR-->
+
+      <!-- JUMBOTRON -->
+      <div sytle="" class="jumbotron jumbotron-fluid bg-gradient d-flex align-items-end">
+
+        <svg class="op" id="leftIcon" xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-chevron-left"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+        </svg>
+        <svg class="op" id="rightIcon" xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-chevron-right"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+
+        <img src="https://i1.sndcdn.com/artworks-000500823264-7n2dz6-t500x500.jpg" class="shadow ml-5"
+          style="width: 200px !important;">
+        <div class="album-jumbotron-description d-inline-block text-light ml-3">
+          <p class="mb-1">ALBUM</p>
+          <h3 class="mb-0">Bohemian Rhapsody (The Original Soundtrack)</h3>
+          <div class="artist-descr-area d-flex mt-2">
+            <span class="artist-icon-sm mr-1"></span>
+            <a href="#" class="text-white" id="exception">
+              <p>Queen</p>
+            </a>
+            <p id="title-for-circles">2018</p>
+            <p>22 songs, 1hr 19min</p>
+          </div>
         </div>
       </div>
-    </div>
-  
-    <div class="middle-song-nav">
-      <div class="top-part-song-nav">
-        <img src="spotify-icons/shuffle.png" class="pointer">
-        <img src="spotify-icons/previous-2.png" class="pointer">
-        <img src="spotify-icons/play-button.png" id="middle-icon" class="pointer">
-        <img src="spotify-icons/previous-3.png" class="pointer">
-        <img src="spotify-icons/loop.png" class="pointer">
+
+
+
+
+      <!-- PLAYLIST MAIN-->
+
+      <div class="container-fluid" style="margin-left: 277px;">
+
+
+        <!-- LEFT PART -->
+
+        <div class="row  mt-0">
+          <div class="col-12">
+
+
+            <!-- TABLE -->
+            <button id="playButton" onclick="play()">
+              <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                class="bi bi-play-fill" viewBox="0 0 16 16">
+                <path
+                  d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+              </svg>
+            </button>
+
+            <div id="heartIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-heart" viewBox="0 0 16 16">
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+              </svg>
+            </div>
+
+            <div id="ellipsisIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-three-dots" viewBox="0 0 16 16">
+                <path
+                  d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+              </svg>
+            </div>
+
+
+            <table class="table borderless">
+              <thead>
+                <tr id="headingTrack">
+                  <th style="width: 2%;" scope="col">#</th>
+                  <th style="width: 65%;" scope="col">TITLE</th>
+                  <th style="width: 30%" ; scope="col">
+                    <svg id="refresh" onclick="location.reload();" xmlns="http://www.w3.org/2000/svg" width="20"
+                      height="20" fill="#BAB7BE" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                      <path
+                        d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                      <path fill-rule="evenodd"
+                        d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                    </svg>
+                  </th>
+                  <th scope="col">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-clock" viewBox="0 0 16 16" style="margin-inline-start: 15px;">
+                      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                    </svg>
+                  </th>
+                  <th style="width: 3%;"></th>
+                </tr>
+              </thead>
+              <tbody id="tableArtist">
+
+
+
+
+
+              </tbody>
+            </table>
+
+            <div id="playing" class="pb-5 mb-5">
+              <svg id="stopIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#121212"
+                class="bi bi-pause-fill" viewBox="0 0 16 16">
+                <path
+                  d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z" />
+              </svg>
+
+              <h6 id="playingText" style="display: inline-block;"></h6>
+              <h6 id="playingText2" style="display: inline-block;"></h6>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="btm-part-song-nav">
-        <p>0:12</p>
-        <span class="song-bar-line pointer"></span>
-        <p>3:34</p>
+
+      <!-- PLAYER BOTTOM -->
+      <div class="container-fluid">
+        <div class="song-navbar">
+          <div class="left-song-nav">
+            <img src="https://i.scdn.co/image/ab67616d0000b27358aa659299939bc52a2dbc22" alt="Group 'Queen' album cover"
+              class="song-nav-img-resize">
+            <div class="text-and-icons">
+              <div class="text-description">
+                <a href="#">
+                  <h5>Another One Bites The Dust - Remastered 2011</h5>
+                </a>
+                <a href="#">
+                  <p>Queen</p>
+                </a>
+              </div>
+              <div class="song-nav-icons">
+                <img src="spotify-icons/heart.svg" class="song-nav-icons-resize pointer">
+              </div>
+            </div>
+          </div>
+
+          <div class="middle-song-nav">
+            <div class="top-part-song-nav">
+              <img src="spotify-icons/shuffle.png" class="pointer">
+              <img src="spotify-icons/previous-2.png" class="pointer">
+              <img src="spotify-icons/play-button.png" id="middle-icon" class="pointer">
+              <img src="spotify-icons/previous-3.png" class="pointer">
+              <img src="spotify-icons/loop.png" class="pointer">
+            </div>
+            <div class="btm-part-song-nav">
+              <p>0:12</p>
+              <span class="song-bar-line pointer"></span>
+              <p>3:34</p>
+            </div>
+          </div>
+
+          <div class="right-song-nav">
+            <div class="icons-combo">
+              <img src="spotify-icons/list.png" id="first-icon" class="pointer">
+              <img src="spotify-icons/responsive.png" class="pointer">
+              <img src="spotify-icons/audio.png" class="pointer">
+              <div class="volume-line pointer"></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  
-    <div class="right-song-nav">
-      <div class="icons-combo" >
-        <img src="spotify-icons/list.png" id="first-icon" class="pointer">
-        <img src="spotify-icons/responsive.png" class="pointer">
-        <img src="spotify-icons/audio.png" class="pointer">
-        <div class="volume-line pointer"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
-<!-- PLAY FUNCTIONALITIES -->
+      <!-- PLAY FUNCTIONALITIES -->
 
-<audio id="audio" src="Queen - 20th Century Fox Fanfare.mp3"></audio>
-<audio id="audio2" src="Queen - Queen- Somebody to Love.mp3"></audio>
-<audio id="audio3" src="Smile - Doing All Right (...Revisited).mp3"></audio>
-<audio id="audio4" src="Queen - Keep Yourself Alive (Live At The Rainbow).mp3"></audio>
-<audio id="audio5" src="Qeen - Killer Queen.mp3"></audio>
-<audio id="audio6" src="Queen - Fat Bottomed Girls.mp3"></audio>
-<audio id="audio7" src="Queen - Bohemian Rhapsody.mp3"></audio>
-<audio id="audio8" src="Queen - Now I'm Here (Live At The Hammersmith Odeon).mp3"></audio>
-<audio id="audio9" src="Queen - Crazy Little Thing Call Love.mp3"></audio>
 
-<script src="albumScript.js"></script>
-<script src="addPlaylist.js"></script>
+
+      <script src="albumScript.js"></script>
+      <script src="addPlaylist.js"></script>
 
 
 
 
 
-    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
-  
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-      crossorigin="anonymous"></script>
-  
-  
+      <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+      <script>
+
+
+        let tableNode = document.getElementById('tableArtist')
+
+
+
+        window.onload = function () {
+          let idParams = new URLSearchParams(window.location.search)
+
+          let id = idParams.get("id")
+          let name = idParams.get('name')
+
+          console.log(id, name)
+
+
+          fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + name, {
+
+          })
+            .then((responseBody) => responseBody.json())
+            .then((data) => {
+
+
+              console.log(data.data[0].album.id);
+
+
+              for (let i = 0; i < data.data.length; i++) {
+
+                if (data.data[i].album.id === parseInt(id)) {
+                  //console.log(data.data[i]);
+
+                  let songNode = document.createElement(`tr`)
+                  songNode.id = `track${i}`
+                  songNode.innerHTML = `
+                      <audio src='${data.data[i].preview}'></audio>  
+                      <th scope="row">${i + 1}</th>
+                      <td>
+                                <h6>${data.data[i].title}</h6>
+                                <a >${data.data[i].artist.name}</a>
+                                
+                      </td>
+                      
+
+                      
+                      
+                      `
+
+                    
+                   songNode.children[2].children[1].addEventListener('click', () => {
+
+                    window.location.assign(`./artist-page.html?artist=` + data.data[i].artist.name )
+
+                    //window.location.assign("./details.html?picId=" + photo.id)
+
+
+                  })
+
+                  //add th artis name
+
+                  // make it clickable
+
+
+                  //dinamic
+
+
+
+                  tableNode.appendChild(songNode)
+
+                  songNode.addEventListener('click', () => {
+
+
+
+
+                    if (songNode.classList.value === 'play') {
+                      songNode.children[0].pause()
+                    } else {
+                      songNode.children[0].play()
+
+                    }
+
+                    songNode.classList.toggle('play')
+
+
+
+                  })
+
+
+
+
+
+                }
+              }
+
+
+
+            })
+
+
+
+        }
+
+      </script>
 
 </body>
-</html> 
+
+</html>

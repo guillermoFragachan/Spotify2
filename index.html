@@ -94,9 +94,10 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link d-flex" id="searchBar" href="#">
                   <i class="bi bi-search"></i>
-                  Search
+                  <p class="searchHolder">Search</p>
+                  <input type="text" style="height: 0.1rem; width: 150px;" class="d-none searchArea">
                 </a>
               </li>
 
@@ -403,7 +404,7 @@
           </p>
         </div>
 
-        <div class="container-fluid d-flex justify-content-start flex-wrap">
+        <div class="container-fluid d-flex justify-content-start flex-wrap" id="recently">
 
 
          
@@ -596,9 +597,85 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"></script>
     <script src="./js/player.js"></script>
-    <script src="./js/albumFetch.js"></script>
+  
     <script src="./js/strivify.js"></script>
+    <script>
+      let inputNode = document.querySelector(".searchArea")
 
+      let searchNode = document.getElementById('searchBar')
+      searchNode.addEventListener('click', () =>{
+        document.querySelector(".searchHolder").classList.add("d-none");
+        document.querySelector(".searchArea").classList.remove("d-none");
+        /* searchNode.id='inputbar'
+        searchNode.children[1].remove() */
+        
+      })
+
+      inputNode.addEventListener('change', (event)=>{
+        
+          console.log(inputNode.value)
+
+          fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + inputNode.value, {
+    
+  })
+  .then((response) => response.json())
+  .then((data) => {
+
+    let containerNode = document.querySelectorAll('#recently')[0]
+     console.log(data.data[1])
+    containerNode.innerHTML=''
+
+     for(let i = 0; i< 6; i++){
+
+        let card = document.createElement('div')
+        card.innerHTML=`
+        <div class="card p-2 cb mx-2 mb-4" style="min-width: 150px; max-width: 200px;">
+         <img src="${data.data[i].artist.picture_big}" class="card-img-top" alt="...">
+         <div class="card-body">
+          <h6 class="card-title">${data.data[i].title}</h6>
+          <audio src='${data.data[i].preview}'></audio>  
+          <div class="play-btn-2 " id='song${i}'></div>
+          
+          <a href="./artist-page.html" style="text-decoration-color: white;">
+
+          
+          <p class="cardtext">${data.data[i].album.title}</p>
+          </a>
+        </div>
+          </div>
+        
+        
+        
+        `
+
+
+        card.addEventListener('click', () =>{
+
+window.location.assign(`./album.html?id=` + data.data[i].album.id + '&name=' + data.data[i].artist.name )
+
+//window.location.assign("./details.html?picId=" + photo.id)
+
+
+})
+          containerNode.appendChild(card)
+
+
+      
+      }
+
+
+
+
+
+  })
+
+      })
+      
+
+
+
+
+    </script>
 
 </body>
 
