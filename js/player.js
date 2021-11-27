@@ -173,6 +173,7 @@ function realtime(_audio){
 
 
 window.onload = function(){
+ 
   changeNavbar()
   progress()
   
